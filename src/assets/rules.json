@@ -1,0 +1,53 @@
+[
+    {
+        "name": "Test des valves V2 V3 V4",
+        "rule":"onlyOneTrue",
+        "params":["V2","V3","V4"],
+        "errorMessage": "Une seule valve doit être ouverte à la fois."
+
+    },
+    {
+        "name": "Température du bouilleur",
+        "rule":"and",
+        "rules" :
+        [
+            {
+                "name": "Température supérieur à 20°c",
+                "rule":"greaterThan",
+                "params":"BoilerTemp",
+                "value": 20
+            },{
+                "name": "Température inférieur à 80°c",
+                "rule":"lessThan",
+                "params":"BoilerTemp",
+                "value": 80
+            }
+        ],
+        "errorMessage": "La température doit être comprise entre 20°c et 80°c."
+
+    },
+    {
+        "name": "Débit pompe préchauffage",
+        "rule":"greaterThan",
+        "params":"FSL1",
+        "value": 1,
+        "errorMessage": "La débit de la pompe de préchauffage doit être supérieur à 1 L/h. Vérifier que V1 n'est pas ouverte."
+
+    },
+    {
+        "name": "Vanne V8",
+        "rule":"isTrue",
+        "params":"V8",
+        "value": true,
+        "errorMessage": "La vanne V8 est fermée. Veuillez l'ouvrir avant de lancer un cycle."
+
+    },
+    {
+        "name": "Vanne V9",
+        "rule":"isFalse",
+        "params":"V9",
+        "value": false,
+        "errorMessage": "La vanne V9 est ouverte. Veuillez la fermer avant de lancer un cycle."
+
+    }
+]
