@@ -19,7 +19,7 @@ import {
   useState,
   type SetStateAction,
 } from "react";
-import { type Entity/*, type Vec3 */, CameraControllerPresets} from "@3dverse/livelink";
+import { type Entity} from "@3dverse/livelink";
 import { LoadingOverlay } from "@3dverse/livelink-react-ui";
 import "./styles/App.css";
 import data from "./assets/machineState.json";
